@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 
 export default function Home() {
   const fileRef = useRef(null);
-  const [imgSrc, setImgSrc] = useState("/vercel.svg");
+  const [imgSrc, setImgSrc] = useState("placeholder.jpg");
   const [file, setFile] = useState(null);
 
   const handleChange = () => {
@@ -48,12 +48,14 @@ export default function Home() {
         </h1>
         <div className="bg-red-200 w-[500px] h-[500px] grid place-items-center">
           <div className="relative w-[250px] h-[250px] bg-blue-500">
-            <Image
+            <img
               src={imgSrc}
               alt={"image place holder"}
-              unoptimized={true}
-              layout="fill"
-            ></Image>
+              style={{
+                width: 250,
+                height: 250,
+              }}
+            />
           </div>
           <form
             onSubmit={handleSubmit}
